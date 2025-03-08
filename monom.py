@@ -269,6 +269,8 @@ class Monom(tuple):
     r = self.lex(other)
     if r:
       return r
+    elif self.__pos == other.__pos:
+      return 0
     elif other.__pos == -1 or self.__pos < other.__pos:
       return 1
     else:
@@ -286,6 +288,8 @@ class Monom(tuple):
     r = self.deglex(other)
     if r:
       return r
+    elif self.__pos == other.__pos:
+      return 0
     elif other.__pos == -1 or self.__pos < other.__pos:
       return 1
     else:
